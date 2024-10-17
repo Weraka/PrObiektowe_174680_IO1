@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Zestaw3 {
     public static void trojkipitagorejskie(int n) {
         for (int a = 1; a <= n; a++) {
@@ -76,6 +78,39 @@ public class Zestaw3 {
             suma = suma*i;
         }
         System.out.println(suma);
+    }
+
+    private static void piramida()
+    {
+        int wariant = 2;
+        int n = 5;
+        char znak = '*';
+        if(wariant == 1)
+        {
+            for(int i = 1; i <= n; i++)
+            {
+                for(int j = 1; j <= i; j++)
+                {
+                    System.out.print(znak);
+                }
+                System.out.println("\n");
+            }
+        }
+        else
+        {
+            for(int i = 1; i <= n; i++)
+            {
+                for(int j = 1; j <= n-i; j++)
+                {
+                    System.out.print(" ");
+                }
+                for(int j = 1; j <= i; j++)
+                {
+                    System.out.print(znak+" ");
+                }
+                System.out.println("\n");
+            }
+        }
     }
 
     public static void silniapodwojna(int n)
@@ -220,6 +255,21 @@ public class Zestaw3 {
         return czypr;
     }
 
+    public static boolean czyLiczbaPalindrom(int n)
+    {
+        boolean wynik = true;
+        int dl = 0;
+        int []tab = new int[dl];
+        while(n<1)
+        {
+            n = n/10;
+            dl++;
+        }
+        System.out.println(dl);
+        System.out.println(tab);
+        return wynik;
+    }
+
     public static boolean czyDoskonala(int n)
     {
         int suma = 0;
@@ -263,6 +313,37 @@ public class Zestaw3 {
         }
     }
 
+    public static int NWD(int x, int y)
+    {
+        int wynik = 0;
+        for(int i=1; i<=x;i++)
+        {
+            if(x%i==0&&y%i==0)
+            {
+                wynik = i;
+            }
+        }
+        return wynik;
+    }
+
+    public static int[] wczytajTablice(int n)
+    {
+        Scanner scanner = new Scanner(System.in);
+        int []tab=new int[n];
+        for(int i = 1; i <= n; i++)
+        {
+            System.out.print("Podaj liczbę \n");
+            tab[i-1]=scanner.nextInt();
+        }
+
+        return tab;
+    }
+
+    public static int podzbiory(int[] tab)
+    {
+        return 1;
+    }
+
     public static void main(String[] args) {
 
         System.out.println("\nZad1");
@@ -279,6 +360,9 @@ public class Zestaw3 {
 
         System.out.println("\nZad5");
         //liczbyPodzielne(2, 11);
+
+        System.out.println("\nZad6");
+        //piramida();
 
         System.out.println("\nZad7");
         //silnia(4);
@@ -321,10 +405,19 @@ public class Zestaw3 {
         System.out.println("\nZad13");
         System.out.println(czyPalindrome("kajak"));
 
+        System.out.println("\nZad15");
+        System.out.println(czyLiczbaPalindrom(632));
+
         System.out.println("\nZad16");
         System.out.println(czyDoskonala(6));
 
         System.out.println("\nZad17");
         System.out.println(czyPierwsza(7));
+
+        System.out.println("\nZad18");
+        System.out.println(NWD(8, 18));
+
+        System.out.println("\nZad19");
+        //System.out.println(podzbiory(tab));
     }
 }
