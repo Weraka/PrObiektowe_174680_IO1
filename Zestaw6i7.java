@@ -593,9 +593,9 @@ public class Main {
         //produkt.WyswietlInformacje();
 
 
-        /*Produkt produkt1 = new Produkt("Masne Maslo", 5, 3);
-        Produkt produkt2 = new Produkt("Lizak Mewing", 40, 1);
-        Produkt produkt3 = new Produkt("Chaderskie Chipsy", 8, 20);
+        /*Produkt produkt1 = new Produkt("sdcfsdfd", 5, 3);
+        Produkt produkt2 = new Produkt("dssf", 40, 1);
+        Produkt produkt3 = new Produkt("fdfv", 8, 20);
 
         ArrayList<Produkt> produkty = new ArrayList<>();
         produkty.add(produkt1);
@@ -611,9 +611,9 @@ public class Main {
 
 
         //Zad3
-        /*Produkt produkt1 = new Produkt("Masne Maslo", 5, 3);
-        Produkt produkt2 = new Produkt("Lizak Mewing", 40, 1);
-        Produkt produkt3 = new Produkt("Chaderskie Chipsy", 8, 20);
+        /*Produkt produkt1 = new Produkt("asda", 5, 3);
+        Produkt produkt2 = new Produkt("gssd", 40, 1);
+        Produkt produkt3 = new Produkt("qwqdsy", 8, 20);
 
         ArrayList<Produkt> produkty = new ArrayList<>();
         produkty.add(produkt1);
@@ -632,9 +632,9 @@ public class Main {
 
 
         //Zad4
-        /*Produkt produkt1 = new Produkt("Masne Maslo", 5, 3);
-        Produkt produkt2 = new Produkt("Lizak Mewing", 40, 1);
-        Produkt produkt3 = new Produkt("Chaderskie Chipsy", 8, 20);
+        /*Produkt produkt1 = new Produkt("fsfw", 5, 3);
+        Produkt produkt2 = new Produkt("fsfsdc", 40, 1);
+        Produkt produkt3 = new Produkt("dsdwd", 8, 20);
 
         ArrayList<Produkt> produkty = new ArrayList<>();
         produkty.add(produkt1);
@@ -656,9 +656,9 @@ public class Main {
 
 
         //Zad5
-        /*Produkt produkt1 = new Produkt("Masne Maslo", 5, 3);
-        Produkt produkt2 = new Produkt("Lizak Mewing", 40, 1);
-        Produkt produkt3 = new Produkt("Chaderskie Chipsy", 8, 20);
+        /*Produkt produkt1 = new Produkt("sdsdwd", 5, 3);
+        Produkt produkt2 = new Produkt("fssdf", 40, 1);
+        Produkt produkt3 = new Produkt("sdfsd", 8, 20);
 
         ArrayList<Produkt> produkty = new ArrayList<>();
         produkty.add(produkt1);
@@ -679,9 +679,9 @@ public class Main {
 
 
         //Zad6
-        /*Produkt produkt1 = new Produkt("Masne Maslo", 5, 3);
-        Produkt produkt2 = new Produkt("Lizak Mewing", 40, 1);
-        Produkt produkt3 = new Produkt("Chaderskie Chipsy", 8, 20);
+        /*Produkt produkt1 = new Produkt("sdfgd", 5, 3);
+        Produkt produkt2 = new Produkt("sdffg", 40, 1);
+        Produkt produkt3 = new Produkt("sdfegrg", 8, 20);
 
         ArrayList<Produkt> produkty = new ArrayList<>();
         produkty.add(produkt1);
