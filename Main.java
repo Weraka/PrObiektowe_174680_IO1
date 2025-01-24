@@ -1,76 +1,115 @@
 import java.util.*;
+
 public class Main
 {
-    public static class Client implements Comparable<Client>
+    interface SoundPlayer
     {
-        private String lastName;
-        private double balance;
-
-        public Client(String lastName, double balance)
+        abstract void playSound();
+        default void stopSound()
         {
-            this.lastName = lastName;
-            this.balance = balance;
-        }
-        @Override
-        public int compareTo(Client other)
+            System.out.println("Sound Stopped");
+        };
+        static String getDeviceType()
         {
-            int porownanie = Double.compare(balance, other.balance);
-            if(porownanie != 0)
-            {
-                return porownanie;
-            }
-            return lastName.compareTo(other.lastName);
-        }
-        @Override
-        public String toString()
-        {
-            return lastName + ", " + balance;
-        }
-    }
-    public static class Company extends Client
-    {
-        private int numberOfEmployees;
-
-        public Company(String lastName, double balance, int numberOfEmployees)
-        {
-            super(lastName, balance);
-            this.numberOfEmployees = numberOfEmployees;
-        }
-        @Override
-        public int compareTo(Client other)
-        {
-            if(other instanceof Company)
-            {
-                Company otherCompany = (Company)other;
-
-                int porownanie = super.compareTo(otherCompany);
-                if(porownanie == 0)
-                {
-                    return Integer.compare(numberOfEmployees, otherCompany.numberOfEmployees);
-                }
-                else
-                {
-                    return porownanie;
-                }
-            }
-            return super.compareTo(other);
-        }
+            return "Sound Device";
+        };
 
     }
+    public static class MusicPlayer implements SoundPlayer
+    {
+
+        @Override
+        public void playSound() {
+            System.out.println("Playing Music");
+        }
+    }
+    public static class Radio implements SoundPlayer
+    {
+        @Override
+        public void playSound()
+        {
+            System.out.println("Playing Radio");
+        }
+    }
+
     public static void main(String[] args)
     {
-        ArrayList<Client> clients = new ArrayList<>();
-        Client cl1 = new Client("DupeOter", 1000000);
-        clients.add(cl1);
-        Client cl2 = new Client("DupeOter2", 10000);
-        clients.add(cl2);
+        MusicPlayer mp1 = new MusicPlayer();
+        mp1.playSound();
+        mp1.stopSound();
+        SoundPlayer.getDeviceType();
 
-        Company company1 = new Company("DupeOter3", 2, 12);
-        clients.add(company1);
-        Collections.sort(clients);
-        for(Client client : clients)
+    }
+}
+/*import java.util.*;
+
+public class Main
+{
+    interface SoundPlayer
+    {
+        abstract void playSound();
+        default void stopSound()
         {
-            System.out.println(client);
+            System.out.println("Sound Stopped");
+        };
+        static String getDeviceType()
+        {
+            return "Generic Sound Device";
+        };
+    }
+
+    public static class MusicPlayer implements SoundPlayer
+    {
+        @Override
+        public void playSound() {
+            System.out.println("Playing Music");
+        }
+
+        public void shufflePlaylist() {
+            System.out.println("Shuffling playlist...");
+        }
+    }
+
+    public static class Radio implements SoundPlayer
+    {
+        @Override
+        public void playSound()
+        {
+            System.out.println("Playing Radio");
+        }
+
+        public void tuneFrequency(double frequency) {
+            System.out.println("Tuning to frequency: " + frequency + " MHz");
+        }
+    }
+
+    public static void main(String[] args)
+    {
+        // Przykład użycia MusicPlayer
+        MusicPlayer mp1 = new MusicPlayer();
+        mp1.playSound();
+        mp1.stopSound();
+        mp1.shufflePlaylist();
+
+        // Przykład użycia Radio
+        Radio radio1 = new Radio();
+        radio1.playSound();
+        radio1.stopSound();
+        radio1.tuneFrequency(101.2);
+
+        // Wywołanie metody statycznej
+        System.out.println(SoundPlayer.getDeviceType());
+
+        // Obsługa listy urządzeń
+        List<SoundPlayer> devices = new ArrayList<>();
+        devices.add(mp1);
+        devices.add(radio1);
+
+        System.out.println("\nIteracja przez urządzenia:");
+        for (SoundPlayer device : devices) {
+            device.playSound();
+            device.stopSound();
         }
     }
 }
+*/
