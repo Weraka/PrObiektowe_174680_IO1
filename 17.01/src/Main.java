@@ -36,7 +36,17 @@ public class Main {
     //B1
     public static <T> void reversePrint(Iterable<T> items)
     {
+        List<T> tempList = new ArrayList<>();
         
+        // Dodajemy wszystkie elementy z Iterable do listy
+        for (T item : items) {
+            tempList.add(item);
+        }
+        
+        // Iterujemy w odwrotnej kolejności i drukujemy elementy
+        for (int i = tempList.size() - 1; i >= 0; i--) {
+            System.out.println(tempList.get(i));
+        }
 
     }
 
@@ -81,7 +91,18 @@ public class Main {
 
         System.out.println(mergeLists(list, list1));*/
 
+        List<String> names = Arrays.asList("Alice", "Bob", "Charlie", "Diana");
 
+        // Wywołanie reversePrint na liście
+        System.out.println("Odwrócona lista:");
+        reversePrint(names);
+
+        // Przykładowa sekwencja z zestawu
+        Set<Integer> numbers = new LinkedHashSet<>(Arrays.asList(10, 20, 30, 40));
+
+        // Wywołanie reversePrint na zestawie
+        System.out.println("Odwrócony zestaw:");
+        reversePrint(numbers);
 
 
     }
